@@ -1,39 +1,46 @@
-.clock {
-  color: var(--clr-light);
-  border: solid 20px white;
-  border-radius: 50%;
-  width: 410px;
-  height: 410px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.clock__time-line {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  flex-direction: column;
-
-  border: 10px solid green;
-  border-radius: 50%;
-  width: 350px;
-  height: 350px;
-}
-
 .clock__action {
   text-transform: uppercase;
-  background: none;
-  border: none;
+  position: relative;
   color: var(--clr-light);
   font-weight: bold;
   font-size: 16px;
   letter-spacing: 15px;
 }
 
+.clock {
+  border: 25px solid var(--clr-dark);
+  border-radius: 50%;
+  box-shadow: -10px -10px 50px -20px rgb(63, 67, 102);
+}
 .clock__time {
+  color: var(--clr-light);
   font-size: 100px;
   line-height: 120px;
   letter-spacing: -5px;
   font-weight: bold;
+  position: relative;
+}
+
+.clock__circular-progress {
+  box-shadow: 11px 12px 24px -5px rgb(79, 82, 105);
+  position: relative;
+  border: 10px solid var(--clr-dark);
+  height: 410px;
+  width: 410px;
+  border-radius: 50%;
+  background: conic-gradient(#f87070 360deg, var(--clr-dark) 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.clock__circular-progress::before {
+  content: '';
+  position: absolute;
+  width: 365px;
+  height: 365px;
+  border-radius: 50%;
+  background-color: var(--clr-dark);
 }

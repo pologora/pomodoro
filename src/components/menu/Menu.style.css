@@ -7,6 +7,9 @@
 
 .menu__button {
   color: var(--clr-menu-text);
+  width: 120px;
+  height: 48px;
+  border-radius: 30px;
 
   &.menu__button--active {
     background-color: #f87070;

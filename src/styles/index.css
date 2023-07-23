@@ -7,9 +7,7 @@
 .button {
   background: none;
   border: none;
-  width: 120px;
-  height: 48px;
-  border-radius: 30px;
+  cursor: pointer;
 }
 
 .body-big-text {

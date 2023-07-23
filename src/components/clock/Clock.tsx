@@ -3,11 +3,9 @@ import './Clock.style.css';
 const Clock = () => {
   return (
     <div className='clock'>
-      <div className='clock__time-line'>
-        <div className='clock__time'>
-          <span>21</span>:<span>11</span>
-        </div>
-        <button className='clock__action'>pause</button>
+      <div className='clock__circular-progress'>
+        <span className='clock__time'>21:11</span>
+        <button className='clock__action button'>start</button>
       </div>
     </div>
   );
