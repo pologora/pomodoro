@@ -12,6 +12,6 @@ export enum Color {
 
 export enum MenuOption {
   Pomodoro = 'pomodoro',
-  ShortBreak = 'short break',
-  LongBreak = 'long break',
+  ShortBreak = 'shortBreak',
+  LongBreak = 'longBreak',
 }

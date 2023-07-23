@@ -5,7 +5,7 @@ import { MenuOption } from '../../enums/Enums';
 type MenuProps = {
   color: string;
   font: string;
-  setCurrentMenuOption: (newOption: string) => void;
+  setCurrentMenuOption: (newOption: MenuOption) => void;
 };
 
 const Menu = ({
@@ -13,9 +13,19 @@ const Menu = ({
   font,
   setCurrentMenuOption,
 }: MenuProps): JSX.Element => {
+  const [activeButton, setActiveButton] = useState<MenuOption>(
+    MenuOption.Pomodoro
+  );
   const handleMenuClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.currentTarget;
-    setCurrentMenuOption(name);
+    setCurrentMenuOption(name as MenuOption);
+    setActiveButton(name as MenuOption);
+  };
+
+  const getActiveButtonStyle = (name: MenuOption) => {
+    if (name === activeButton) {
+      return { backgroundColor: color, color: '#161932' };
+    }
   };
 
   return (
@@ -24,6 +34,7 @@ const Menu = ({
         onClick={handleMenuClick}
         name={MenuOption.Pomodoro}
         className='menu__button body-small-text button menu__button--active'
+        style={getActiveButtonStyle(MenuOption.Pomodoro)}
       >
         {MenuOption.Pomodoro}
       </button>
@@ -31,6 +42,7 @@ const Menu = ({
         onClick={handleMenuClick}
         name={MenuOption.ShortBreak}
         className='menu__button body-small-text button'
+        style={getActiveButtonStyle(MenuOption.ShortBreak)}
       >
         {MenuOption.ShortBreak}
       </button>
@@ -38,6 +50,7 @@ const Menu = ({
         onClick={handleMenuClick}
         name={MenuOption.LongBreak}
         className='menu__button body-small-text button'
+        style={getActiveButtonStyle(MenuOption.LongBreak)}
       >
         {MenuOption.LongBreak}
       </button>

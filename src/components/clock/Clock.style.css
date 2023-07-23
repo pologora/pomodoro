@@ -5,6 +5,7 @@
   font-weight: bold;
   font-size: 16px;
   letter-spacing: 15px;
+  padding-left: 15px;
 }
 
 .clock {
@@ -12,6 +13,7 @@
   border-radius: 50%;
   box-shadow: -10px -10px 50px -20px rgb(63, 67, 102);
 }
+
 .clock__time {
   color: var(--clr-light);
   font-size: 100px;
@@ -28,7 +30,6 @@
   height: 410px;
   width: 410px;
   border-radius: 50%;
-  background: conic-gradient(#f87070 360deg, var(--clr-dark) 0deg);
   display: flex;
   align-items: center;
   justify-content: center;

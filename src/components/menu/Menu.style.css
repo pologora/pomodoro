@@ -11,8 +11,7 @@
   height: 48px;
   border-radius: 30px;
 
-  &.menu__button--active {
-    background-color: #f87070;
+  /* &.menu__button--active {
     color: #161932;
-  }
+  } */
 }
