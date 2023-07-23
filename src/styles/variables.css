@@ -1,3 +1,5 @@
 :root {
-  --clr-dark: rgb(14, 228, 14);
+  --clr-dark: #161932;
+  --clr-menu-text: #d7e0ff;
+  --clr-light: #d7e0ff;
 }

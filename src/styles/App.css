@@ -1,1 +1,31 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e213f;
+  padding: 3rem;
+}
+
+.options-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.options-icon {
+  color: #d7e0ff;
+  font-size: 28px;
+
+  &:hover,
+  &:focus {
+    color: #9d9fb3;
+  }
+}
+
+
+
 

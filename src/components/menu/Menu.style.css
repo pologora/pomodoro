@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  background-color: var(--clr-dark);
+  padding: 10px;
+  border-radius: 40px;
+}
+
+.menu__button {
+  color: var(--clr-menu-text);
+
+  &.menu__button--active {
+    background-color: #f87070;
+    color: #161932;
+  }
+}
