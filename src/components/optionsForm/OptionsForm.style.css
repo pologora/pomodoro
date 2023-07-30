@@ -1,0 +1,30 @@
+.form-container {
+  position: relative;
+  width: 90vw;
+  height: 85vh;
+  margin-top: 5vh;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.form {
+}
+
+.form__submit-button {
+  color: white;
+  font-size: 16px;
+  width: 140px;
+  height: 53px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 50%);
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.form__submit-button:hover,
+.form__submit-button:focus {
+}

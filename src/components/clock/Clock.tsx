@@ -20,6 +20,7 @@ const Clock = ({ font, color, time }: ClockProps): JSX.Element => {
 
   useEffect(() => {
     setTimer(time * 60 * 1000);
+    setIsRuning(false);
   }, [time]);
 
   const handleTimerClick = () => {
@@ -40,27 +41,17 @@ const Clock = ({ font, color, time }: ClockProps): JSX.Element => {
         }
         return prev - 1000;
       });
-      console.log(timer);
     }, SPEED);
 
     setIntervalId(id);
-    console.log('start');
-  };
-
-  const resetTimer = () => {
-    setIsRuning(false);
-    setTimer(time);
   };
 
   const pauseTimer = () => {
     clearInterval(intervalId!);
     setIsRuning(false);
-    console.log('pause');
   };
 
   useEffect(() => {
-    setTimer(time * 60 * 1000);
-
     return () => {
       if (intervalId) {
         clearInterval(intervalId);
@@ -80,11 +71,11 @@ const Clock = ({ font, color, time }: ClockProps): JSX.Element => {
           background: `conic-gradient(${color} ${270}deg, var(--clr-dark) 0deg)`,
         }}
       >
-        <span className='clock__time'>{`${formatTime(minutes)}:${formatTime(
+        <h1 className='clock__time'>{`${formatTime(minutes)}:${formatTime(
           seconds
-        )}`}</span>
+        )}`}</h1>
         <button onClick={handleTimerClick} className='clock__action button'>
-          {isRuning ? 'pause' : 'start'}
+          <h3>{isRuning ? 'pause' : 'start'}</h3>
         </button>
       </div>
     </div>

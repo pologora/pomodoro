@@ -7,11 +7,7 @@
 
 .menu__button {
   color: var(--clr-menu-text);
-  width: 120px;
-  height: 48px;
+  width: 30vw;
+  height: 12vw;
   border-radius: 30px;
-
-  /* &.menu__button--active {
-    color: #161932;
-  } */
 }

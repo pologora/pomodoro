@@ -5,6 +5,8 @@ import Menu from './components/menu/Menu';
 import './styles/App.css';
 import { FaCog } from 'react-icons/fa';
 import { Font, Color, MenuOption } from './enums/Enums';
+import Modal from './components/optionsModal/Modal';
+import OptionsForm from './components/optionsForm/OptionsForm';
 
 type TimerOptions = {
   [MenuOption.Pomodoro]: number;
@@ -18,7 +20,7 @@ const defaultOptions: TimerOptions = {
   [MenuOption.Pomodoro]: 25,
   [MenuOption.LongBreak]: 15,
   [MenuOption.ShortBreak]: 5,
-  color: Color.Color2,
+  color: Color.Color1,
   font: Font.Font1,
 };
 
@@ -29,9 +31,9 @@ const App = () => {
   const [currentMenuOption, setCurrentMenuOption] =
     useState<MenuOption>(defaultCurrentOption);
   const [activeTimer, setActiveTimer] = useState(options[defaultCurrentOption]);
+  const [isOptionsModalOpen, setIsOptionsModalOpen] = useState(false);
 
   useEffect(() => {
-    console.log(activeTimer);
     switch (currentMenuOption) {
       case MenuOption.Pomodoro:
         setActiveTimer(options.pomodoro);
@@ -48,7 +50,15 @@ const App = () => {
   }, [currentMenuOption]);
 
   const handleOptionsClick = () => {
-    console.log('options');
+    handleOpenOptionsModal();
+  };
+
+  const handleOpenOptionsModal = () => {
+    setIsOptionsModalOpen(true);
+  };
+
+  const handleCloseOptionsModal = () => {
+    setIsOptionsModalOpen(false);
   };
   return (
     <>
@@ -63,6 +73,11 @@ const App = () => {
         <button className='options-button' onClick={handleOptionsClick}>
           <FaCog className='options-icon' />
         </button>
+        {isOptionsModalOpen && (
+          <Modal onClose={handleCloseOptionsModal} open={isOptionsModalOpen}>
+            <OptionsForm color={options.color} />
+          </Modal>
+        )}
       </div>
     </>
   );

@@ -2,33 +2,25 @@
   text-transform: uppercase;
   position: relative;
   color: var(--clr-light);
-  font-weight: bold;
-  font-size: 16px;
-  letter-spacing: 15px;
-  padding-left: 15px;
-}
-
-.clock {
-  border: 25px solid var(--clr-dark);
-  border-radius: 50%;
-  box-shadow: -10px -10px 50px -20px rgb(63, 67, 102);
 }
 
 .clock__time {
   color: var(--clr-light);
-  font-size: 100px;
-  line-height: 120px;
-  letter-spacing: -5px;
-  font-weight: bold;
   position: relative;
 }
 
+.clock {
+  border: 4vw solid var(--clr-dark);
+  border-radius: 50%;
+  box-shadow: -10px -10px 50px -20px rgb(91, 96, 138);
+}
+
 .clock__circular-progress {
-  box-shadow: 11px 12px 24px -5px rgb(79, 82, 105);
+  box-shadow: 11px 12px 24px -5px rgb(56, 59, 73);
   position: relative;
   border: 10px solid var(--clr-dark);
-  height: 410px;
-  width: 410px;
+  height: 80vw;
+  width: 80vw;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -40,8 +32,8 @@
 .clock__circular-progress::before {
   content: '';
   position: absolute;
-  width: 365px;
-  height: 365px;
+  width: 67vw;
+  height: 67vw;
   border-radius: 50%;
   background-color: var(--clr-dark);
 }
